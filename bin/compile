@@ -81,6 +81,10 @@ source $BIN_DIR/steps/conda_compile
 
 # Store new artifacts in cache.
 for dir in $CACHED_DIRS; do
+  echo "Removing and copying resources ${CACHE_DIR}/${dir}"
+  ls -ltr ${dir}/*
+  echo "Contents of CACHE_DIR"
+  ls -ltr ${CACHE_DIR}/
   rm -rf $CACHE_DIR/$dir
   cp -R $dir $CACHE_DIR/
 done
@@ -99,3 +103,4 @@ source $BIN_DIR/steps/hooks/post_compile
 
 deep-mv $BUILD_DIR $ORIG_BUILD_DIR
 deep-mv $TMP_APP_DIR $APP_DIR
+echo "Completed compile"
