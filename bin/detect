@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash 
 
 # This script serves as the
 # [**Python Buildpack**](https://github.com/heroku/heroku-buildpack-python)
